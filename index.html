@@ -8,6 +8,8 @@
   <title>Timișoara Inventory</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <!--Autentification-->
+  <meta name="google-signin-client_id" content="888921774195-m315saae090djjonpdqquthqm0htv8ra.apps.googleusercontent.com">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -81,7 +83,9 @@
                 <li><a href="#">Drop Down 4</a></li>
               </ul>
             </li> -->
-          <li><a href="#"type="button" data-toggle="modal" data-target="#myModal" id="loginBtn">Autentificare</a></li> 
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          <li><a href="#" onclick="signOut()">Sign Out></a>Autentificare</a>
+          </li> 
           <li><a href="#contact">Contact</a></li>
 
         </ul>
@@ -152,7 +156,22 @@
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section>
+    <!-- End About Section -->
+
+    <!--Autentification Google-->
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <a href="#" onclick="signOut();">Sign out</a>
+        <script>
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                });
+            }
+        </script>
+    <!--End of Autentification Google-->
+
     <!-- ======= Counts Section ======= -->
     <!-- <section id="counts" class="counts">
     <div class="container">
@@ -189,6 +208,7 @@
     </div>
   </section> -->
     <!-- End Counts Section -->
+
     <!-- ======= Clients Section ======= -->
     <!-- <section id="clients" class="clients">
     <div class="container">
@@ -248,6 +268,7 @@
     </div>
   </section> -->
     <!-- End Clients Section -->
+
     <!-- ======= Services Section ======= -->
     <!-- <section id="services" class="services section-bg">
     <div class="container">
@@ -307,6 +328,7 @@
     </div>
   </section> -->
     <!-- End Services Section -->
+
     <!-- ======= Portfolio Section ======= -->
     <!-- <section id="portfolio" class="portfolio">
     <div class="container">
@@ -460,6 +482,7 @@
     </div>
   </section> -->
     <!-- End Portfolio Section -->
+
     <!-- ======= Testimonials Section ======= -->
     <!-- <section id="testimonials" class="testimonials">
     <div class="container">
@@ -526,6 +549,7 @@
     </div>
   </section> -->
     <!-- End Testimonials Section -->
+
     <!-- ======= Gallery Section ======= -->
     <!-- <section id="gallery" class="gallery">
     <div class="container">
@@ -606,6 +630,7 @@
     </div>
   </section> -->
     <!-- End Gallery Section -->
+
     <!-- ======= LogIn Section ======= -->
     <!-- <section id="login" class="login">
     <div class="container">
@@ -649,10 +674,11 @@
       </div>
     </div>
   </section> -->
+  <!--End of LogIn Section-->
+
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
-
         <div class="section-title">
           <h2>Contact</h2>
           <p>Pentru mai multe informatii va rugam sa ne trimiteti o solicitare in formularul de mai jos : </p>
@@ -664,13 +690,12 @@
         </div>
 
         <div class="row mt-5">
-
           <div class="col-lg-4">
             <div class="info">
               <div class="address">
                 <i class="icofont-google-map"></i>
                 <h4>Adresa</h4>
-                <p>b-dul C.D. Loga, nr. 1, cod poștal 300030</p>
+                <p>B-dul Constantin Diaconovici Loga, nr. 1, cod poștal 300030</p>
               </div>
 
               <div class="email">
@@ -686,13 +711,10 @@
                 <h4>Fax:</h4>
                 <p>(0256) 490.635</p>
               </div>
-
             </div>
-
           </div>
 
           <div class="col-lg-8 mt-5 mt-lg-0">
-
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="col-md-6 form-group">
@@ -719,20 +741,17 @@
               </div>
               <div class="text-center"><button type="submit">Trimite mesajul</button></div>
             </form>
-
           </div>
-
         </div>
-
       </div>
-    </section><!-- End Contact Section -->
+    </section>
+    <!-- End Contact Section -->
     <!--End of new section for contact-->
 
     <!--Map Leafleft-->
     <h3>Leaflet Map here</h3>
-    <div id="mapid" style="height: 200px"></div>
+    <div id="mapid" style="height: 300px"></div>
     <h3>Leaflet Map ended here</h3>
-
   </main><!-- End #main -->
 
       <!-- ======= Team Section ======= -->
@@ -825,7 +844,6 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
     <div class="footer-newsletter">
       <div class="container">
         <div class="row justify-content-center">
@@ -843,7 +861,6 @@
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Butterfly</h3>
             <p>
@@ -909,89 +926,6 @@
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-  <!--Signin popup-->
-  <div class="container_popup">
-    <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-             <a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a>
-             <a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a></div>
-        <div class="col-sm-4"></div>
-    </div>
-
-
- <div class="modal fade login" id="loginModal">
-      <div class="modal-dialog login animated">
-          <div class="modal-content">
-             <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Login with</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="box">
-                         <div class="content">
-                            <div class="social">
-                                <!-- <a class="circle github" href="#">
-                                    <i class="fa fa-github fa-fw"></i>
-                                </a> -->
-                                <a id="google_login" class="circle google" href="#">
-                                    <i class="fa fa-google-plus fa-fw"></i>
-                                </a>
-                                <!-- <a id="facebook_login" class="circle facebook" href="#">
-                                    <i class="fa fa-facebook fa-fw"></i>
-                                </a> -->
-                            </div>
-                            <div class="division">
-                                <div class="line l"></div>
-                                  <span>or</span>
-                                <div class="line r"></div>
-                            </div>
-                            <div class="error"></div>
-                            <div class="form loginBox">
-                                <form method="" action="" accept-charset="UTF-8">
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
-                                </form>
-                            </div>
-                         </div>
-                    </div>
-                    <div class="box">
-                        <div class="content registerBox" style="display:none;">
-                         <div class="form">
-                            <form method="" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
-                            <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                            <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                            <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-                            <input class="btn btn-default btn-register" type="button" value="Create account" name="commit">
-                            </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="forgot login-footer">
-                        <span>Looking to
-                             <a href="javascript: showRegisterForm();">create an account</a>
-                        ?</span>
-                    </div>
-                    <div class="forgot register-footer" style="display:none">
-                         <span>Already have an account?</span>
-                         <a href="javascript: showLoginForm();">Login</a>
-                    </div>
-                </div>
-          </div>
-      </div>
-  </div>
-</div>
-<script type="text/javascript">
-// $(document).ready(function(){
-//     openLoginModal();
-// });
-</script>
-
-<!--End of Signin popup-->
-
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1010,9 +944,7 @@
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
   <script src = "app.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 
 </html>
