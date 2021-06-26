@@ -1,3 +1,5 @@
+const { divIcon } = require("leaflet");
+
 //Autentification-authorisation _ admin//
 function setVisibility(contentVisibility, loginVisibility){
     var content = document.getElementById('content');
@@ -50,7 +52,7 @@ var popup = new L.marker();
 
 function onMapClick(e) {
     marker
-        .bindPopup("Ai selectat ").openPopup()
+        .bindPopup("Locatie selectata" + '<button type="button" onclick="displayForm">Adauga</button>').openPopup()
         .setLatLng(e.latlng)
         // .setContent("You clicked the map at " + e.latlng.toString())
         .openOn(mymap);
@@ -58,3 +60,49 @@ function onMapClick(e) {
 
 mymap.on('click', onMapClick);
 //End of Map Admin//
+
+//Display form on pop-up//
+function displayForm{
+    let output = '';
+    output = `
+    <tbody id="table-form"> 
+    <tr>
+        <td>
+            <img>
+        </td>
+        <td>
+            <select name="optiuni" value = "tip" id="options">
+                <option value = "cladire">Cladire</option>
+                <option value = "infrastructura">Infrastructura</option>
+            </select>
+        </td>
+        <td>
+            <label for = "an">An contructie</label>
+            <input id="an" type="number" min="1850"></td>
+        </td>
+        <td><label for = "adresa">Adresa</label>
+            <input id = "adresa" type="text" maxlength="150">
+        </td>
+        <td>
+            <label for = "tipDomeniu">Domeniu</label>
+            <select id="tipDomeniu">
+                <option value="public">Public</option>
+                <option value="privat">Privat</option>
+            </select>
+        </td>
+        <td>
+            <label for = "utilizare">Utilizare</label>
+            <select name="sediuInstitutie" id="utilizare">Sediu Institutie</select>
+            <select name="monumentIstoric" id="utilizare">Monument Istoric</select>
+        </td>
+        <td>
+            <label for="nrInventar">Numar inventar</label>
+            <input id = "adresa" type="text" maxlength="50">
+        </td>
+
+        <td><button type="button" id ="addInput"> Adauga</button>
+        </td>
+    </tr>
+</tbody>`;
+}
+
