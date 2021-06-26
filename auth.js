@@ -12,7 +12,7 @@ var startApp = function() {
   });
 };
 
-function showUserName(userName) {
+function setUserNameLabel(userName) {
     document.getElementById('name').innerText = userName;
 }
 
@@ -28,22 +28,39 @@ function attachSignin(element) {
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-        sessionStorage.removeItem('userName');
-        showUserName('');
+        localStorage.removeItem('userName');
+        setUserNameLabel('');
+        loginVisibility(false); 
     });
 }
 
 function signIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     var userName =  googleUser.getBasicProfile().getName();
-    sessionStorage.setItem('userName', userName);
-    showUserName(userName);    
+    localStorage.setItem('userName', userName);
+    setUserNameLabel(userName);   
+    loginVisibility(true); 
 }
 
 function init(){
     startApp();
-    var userName = sessionStorage.getItem('userName');
+    var userName = localStorage.getItem('userName');
     if(userName != null){
-        showUserName(userName);
+        setUserNameLabel(userName);
+        loginVisibility(true);
+    } else {
+        loginVisibility(false);
+    }
+}
+
+function loginVisibility(isLoggedIn) {
+    if (isLoggedIn) {
+        document.getElementById('name').style.display = 'block';
+        document.getElementById('logoutBtn').style.display = 'block';
+        document.getElementById('loginBtn').style.display = 'none';
+    } else {
+        document.getElementById('name').style.display = 'none';
+        document.getElementById('logoutBtn').style.display = 'none';
+        document.getElementById('loginBtn').style.display = 'block';
     }
 }
