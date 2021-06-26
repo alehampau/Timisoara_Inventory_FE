@@ -1,0 +1,19 @@
+#actions {
+    display: flex;
+}
+
+#filtre {
+flex: 1;
+}
+
+#sesizare {
+flex: 1;
+}
+
+#filtre label {
+    display: block;
+}
+
+#sesizare form select {
+    display: block;
+}

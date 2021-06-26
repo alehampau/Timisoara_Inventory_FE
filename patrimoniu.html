@@ -33,7 +33,13 @@
      <!-- Google authentification -->
      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
      <script src="https://apis.google.com/js/api:client.js"></script>    
-     <link href="auth.css" rel="stylesheet" />     
+     <link href="auth.css" rel="stylesheet" />  
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+          integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+          crossorigin=""></script>   
  </head>
  
  <body onload="init()">
@@ -126,11 +132,8 @@
                      <div class="row">
                          <div class="col-md-12">
                              <div class="card">
-                                 <div class="card-header">
-                                     <h4 class="card-title">Heading Example</h4>
-                                 </div>
                                  <div class="card-body">
-                                     
+                                    <div id="mapid" style="height: 500px"></div>
                                  </div>
                              </div>
                          </div>
@@ -140,13 +143,13 @@
              <footer class="footer">
                  <div class="container-fluid">
                      <nav>
-                         <p class="copyright text-center">
-                             ©
-                             <script>
-                                 document.write(new Date().getFullYear())
-                             </script>
-                             <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-                         </p>
+                        <p class="copyright text-center">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> | 
+                            <a href="https://scoalainformala.ro/events/challenge-accepted-paperhack-25-27-iunie-2021-editia-vii/">Challenge Accepted</a> de a pune .ro la birocrație
+                        </p>
                      </nav>
                  </div>
              </footer>
@@ -169,5 +172,6 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script> 
 <!-- Custom code -->
 <script src="auth.js"></script>
+<script src="patrimoniu.js"></script>
 
  </html>
