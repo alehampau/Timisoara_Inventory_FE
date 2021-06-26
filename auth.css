@@ -1,0 +1,22 @@
+#mapid {
+    height: 700px;
+}
+
+#customBtn {
+    display: inline-block;
+    background: white;
+    white-space: nowrap;
+  }
+  
+  #customBtn:hover {
+    cursor: pointer;
+  }
+
+  span.buttonText {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  #name {
+      padding-left: 10px;
+  }
