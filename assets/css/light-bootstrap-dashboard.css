@@ -523,7 +523,7 @@ body>.navbar-collapse .logo {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.sidebar .logo p,
+/* .sidebar .logo p,
 body>.navbar-collapse .logo p {
     float: left;
     font-size: 20px;
@@ -543,9 +543,9 @@ body>.navbar-collapse .logo .simple-text {
     text-align: center;
     font-weight: 400;
     line-height: 30px;
-}
+} */
 
-.sidebar .logo-tim,
+/* .sidebar .logo-tim,
 body>.navbar-collapse .logo-tim {
     border-radius: 50%;
     border: 1px solid #333;
@@ -554,13 +554,13 @@ body>.navbar-collapse .logo-tim {
     width: 61px;
     float: left;
     overflow: hidden;
-}
+} */
 
-.sidebar .logo-tim img,
+/* .sidebar .logo-tim img,
 body>.navbar-collapse .logo-tim img {
     width: 60px;
     height: 60px;
-}
+} */
 
 .sidebar:after,
 .sidebar:before,
@@ -586,7 +586,7 @@ body>.navbar-collapse:before {
 body>.navbar-collapse:after {
     background: #9368E9;
     background: -moz-linear-gradient(top, #9368E9 0%, #943bea 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9368E9), color-stop(100%, #943bea));
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9368E9), color-stop(100%, #943bea)); */
     background: -webkit-linear-gradient(top, #9368E9 0%, #943bea 100%);
     background: -o-linear-gradient(top, #9368E9 0%, #943bea 100%);
     background: -ms-linear-gradient(top, #9368E9 0%, #943bea 100%);
@@ -607,7 +607,7 @@ body>.navbar-collapse.has-image:after {
 body>.navbar-collapse[data-color="black"]:after {
     background: #777777;
     background: -moz-linear-gradient(top, #777777 0%, #777777 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #777777), color-stop(100%, #777777));
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #777777), color-stop(100%, #777777)); */
     background: -webkit-linear-gradient(top, #777777 0%, #777777 100%);
     background: -o-linear-gradient(top, #777777 0%, #777777 100%);
     background: -ms-linear-gradient(top, #777777 0%, #777777 100%);
@@ -619,7 +619,7 @@ body>.navbar-collapse[data-color="black"]:after {
 body>.navbar-collapse[data-color="blue"]:after {
     background: #1F77D0;
     background: -moz-linear-gradient(top, #1F77D0 0%, #533ce1 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1F77D0), color-stop(100%, #533ce1));
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1F77D0), color-stop(100%, #533ce1)); */
     background: -webkit-linear-gradient(top, #1F77D0 0%, #533ce1 100%);
     background: -o-linear-gradient(top, #1F77D0 0%, #533ce1 100%);
     background: -ms-linear-gradient(top, #1F77D0 0%, #533ce1 100%);
@@ -631,7 +631,7 @@ body>.navbar-collapse[data-color="blue"]:after {
 body>.navbar-collapse[data-color="azure"]:after {
     background: #1DC7EA;
     background: -moz-linear-gradient(top, #1DC7EA 0%, #4091ff 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1DC7EA), color-stop(100%, #4091ff));
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1DC7EA), color-stop(100%, #4091ff)); */
     background: -webkit-linear-gradient(top, #1DC7EA 0%, #4091ff 100%);
     background: -o-linear-gradient(top, #1DC7EA 0%, #4091ff 100%);
     background: -ms-linear-gradient(top, #1DC7EA 0%, #4091ff 100%);
@@ -643,7 +643,7 @@ body>.navbar-collapse[data-color="azure"]:after {
 body>.navbar-collapse[data-color="green"]:after {
     background: #87CB16;
     background: -moz-linear-gradient(top, #87CB16 0%, #6dc030 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #87CB16), color-stop(100%, #6dc030));
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #87CB16), color-stop(100%, #6dc030)); */
     background: -webkit-linear-gradient(top, #87CB16 0%, #6dc030 100%);
     background: -o-linear-gradient(top, #87CB16 0%, #6dc030 100%);
     background: -ms-linear-gradient(top, #87CB16 0%, #6dc030 100%);
@@ -655,7 +655,7 @@ body>.navbar-collapse[data-color="green"]:after {
 body>.navbar-collapse[data-color="orange"]:after {
     background: #FFA534;
     background: -moz-linear-gradient(top, #FFA534 0%, #ff5221 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFA534), color-stop(100%, #ff5221));
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFA534), color-stop(100%, #ff5221)); */
     background: -webkit-linear-gradient(top, #FFA534 0%, #ff5221 100%);
     background: -o-linear-gradient(top, #FFA534 0%, #ff5221 100%);
     background: -ms-linear-gradient(top, #FFA534 0%, #ff5221 100%);
@@ -667,7 +667,7 @@ body>.navbar-collapse[data-color="orange"]:after {
 body>.navbar-collapse[data-color="red"]:after {
     background: #FB404B;
     background: -moz-linear-gradient(top, #FB404B 0%, #bb0502 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FB404B), color-stop(100%, #bb0502));
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FB404B), color-stop(100%, #bb0502)); */
     background: -webkit-linear-gradient(top, #FB404B 0%, #bb0502 100%);
     background: -o-linear-gradient(top, #FB404B 0%, #bb0502 100%);
     background: -ms-linear-gradient(top, #FB404B 0%, #bb0502 100%);
@@ -679,7 +679,7 @@ body>.navbar-collapse[data-color="red"]:after {
 body>.navbar-collapse[data-color="purple"]:after {
     background: #9368E9;
     background: -moz-linear-gradient(top, #9368E9 0%, #943bea 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9368E9), color-stop(100%, #943bea));
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9368E9), color-stop(100%, #943bea)); */
     background: -webkit-linear-gradient(top, #9368E9 0%, #943bea 100%);
     background: -o-linear-gradient(top, #9368E9 0%, #943bea 100%);
     background: -ms-linear-gradient(top, #9368E9 0%, #943bea 100%);
@@ -2103,12 +2103,12 @@ fieldset[disabled] .form-control {
     font-size: 16px;
 }
 
-.navbar.fixed {
+/* .navbar.fixed {
     width: calc(100% - $sidebar-width);
     right: 0;
     left: auto;
     border-radius: 0;
-}
+} */
 
 .navbar .nc-icon {
     font-weight: 700;
@@ -2928,7 +2928,7 @@ Copyright (c) 2015 Daniel Eden
     top: 0;
     width: 1px;
     background-color: #DDDDDD;
-    card-body: "";
+    /* card-body: ""; */
     position: absolute;
 }
 
@@ -4485,9 +4485,9 @@ Copyright (c) 2015 Daniel Eden
     .dropdown-menu {
         display: none;
     }
-    .navbar-fixed-top {
+    /* .navbar-fixed-top {
         -webkit-backface-visibility: hidden;
-    }
+    } */
     #bodyClick {
         height: 100%;
         width: 100%;
@@ -4737,7 +4737,7 @@ License - nucleoapp.com/license/
     display: inline-block;
     font: normal normal normal 14px/1 'nucleo-icons';
     font-size: inherit;
-    speak: none;
+    /* speak: none; */
     text-transform: none;
     /* Better Font Rendering */
     -webkit-font-smoothing: antialiased;
