@@ -145,10 +145,12 @@
                                         </select>
                                         <input type="text" readonly id="latitude" name="latitude"/>
                                         <input type="text" readonly id="longitude" name="longitude"/>
-                                        <textarea name="message"></textarea>
+                                        <textarea name="message" id="pinDescription"></textarea>
                                         <small>Nota : se recomanda ca descrierea sa contina cat mai multe informatii</small>
                                         <button type="submit">Submit</button>
                                     </form>
+                                    <button onClick="removePin();">Delete</button>                                    
+                                    <button onClick="updatePin();">Update</button>                                    
                                 </div>
                              </div>
                          </div>
