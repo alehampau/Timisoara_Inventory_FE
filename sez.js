@@ -90,6 +90,7 @@ function postIssue(message) {
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
+  alert('Solicitatea a fost inregistrata.');
 }
 
 function loadIssues() {
