@@ -138,15 +138,16 @@
                                     <div id="mapid" style="height: 500px"></div>    
                                  </div>
 
-                                 <div id="editForm" style="display: none;">
-                                    <form action="https://sibiuinventoryapimanager.azure-api.net/v1/Pins
-                                    " method="POST">
+                                 <div id="editForm">
+                                    <form id="pinCreateForm">
                                         <select id="categoryMaster">
                                             
                                         </select>
+                                        <input type="text" readonly id="latitude" name="latitude"/>
+                                        <input type="text" readonly id="longitude" name="longitude"/>
                                         <textarea name="message"></textarea>
                                         <small>Nota : se recomanda ca descrierea sa contina cat mai multe informatii</small>
-                                        <button type="submit" id="buttonSubmit">Submit</button>
+                                        <button type="submit">Submit</button>
                                     </form>
                                 </div>
                              </div>
