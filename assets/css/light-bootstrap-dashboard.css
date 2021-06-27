@@ -2849,6 +2849,7 @@ Copyright (c) 2015 Daniel Eden
     /* background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)); */
     width: 100%;
     height: auto;
+    padding-bottom: 15px;
 }
 .card .card-title{
     width: 100%;
@@ -2869,6 +2870,7 @@ Copyright (c) 2015 Daniel Eden
     margin-top: 5%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 
 .card .card-category,
 .card label {
@@ -5367,18 +5369,26 @@ License - nucleoapp.com/license/
 
 /* all icon font classes list here */
 
-.column{
-    display: block;
-    justify-content: space-between;
+/* .column{
+    display: flex;
 }
 
 .box{
-    float:left;
     width: 50%;
     padding: 50px;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 .box-image img{
     width: 500px;
     height: 330px;
+} */
+
+/* .card-body{
+    display: flex;
 }
+.card-body img{
+    justify-content: space-around;
+    align-items: center;
+} */
