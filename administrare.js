@@ -26,7 +26,7 @@ fetch("https://sibiuinventoryapimanager.azure-api.net/v1/Pins", requestOptions)
     for(let i = 0; i < results.data.length; i++) {
       var newMarker = L.marker([results.data[i].gpsCoordX, results.data[i].gpsCoordY])
       .bindPopup("<div> <b>Descriere: </b>"+results.data[i].description+"</div><hr>"+
-      "<a href='administrare.html#editForm' class='btn btn-info btn-fill btn-wd' style='margin-bottom: 2px;'>Sterge pin</a>"+
+      "<a href='administrare.html#editForm' class='btn btn-info btn-fill btn-wd' style='margin-bottom: 2px;'>Sterge Marcaj</a>"+
       "<a href='administrare.html#editForm' class='btn btn-info btn-fill btn-wd'>Modifica descriere</a>")
       .addTo(mymap);
       newMarker.addEventListener('click',logPosition);
@@ -66,8 +66,13 @@ function removePin() {
       
       fetch("https://sibiuinventoryapimanager.azure-api.net/v1/Pins/"+markers[i].id, requestOptions)
         .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
+        .then(result => { 
+          console.log(result);
+        })
+        .catch(error => { 
+          console.log('error', error);
+        });
+        alert('Solicitatea a fost inregistrata.');
       break;
     }
   }
@@ -95,8 +100,13 @@ function updatePin() {
 
       fetch("https://sibiuinventoryapimanager.azure-api.net/v1/Pins/"+foundMarker.id, requestOptions)
       .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+      .then(result => { 
+        console.log(result);
+      })
+      .catch(error => { 
+        console.log('error', error);
+      });
+      alert('Solicitatea a fost inregistrata.');
 
       break;
     }
@@ -117,7 +127,7 @@ function onMapClick(e) {
 
     L.popup()
     .setLatLng(coordinates)
-    .setContent("<a href='administrare.html#editForm' id='saveBtn' class='btn btn-info btn-fill btn-wd'>Salveaza marker</a>")
+    .setContent("<a href='administrare.html#editForm' id='saveBtn' class='btn btn-info btn-fill btn-wd'>Adauga Marcaj</a>")
     .openOn(mymap);
 }
 
@@ -134,23 +144,19 @@ function onMapClick(e) {
         var option = document.createElement("option");
         option.text = results.data[i].id + "_" + results.data[i].name;
         selector.add(option);
-        
       }
   })
   .catch(error => console.log('error', error));
 
-function handleSubmit(event) {
-  event.preventDefault();
-  const data = new FormData(event.target);
-  
-  const description = data.get('message');
+function handleSubmit() {
+  const description = document.getElementById('pinDescription').value;
   
   var selector = document.getElementById("categoryMaster");
   const selectedOption = selector.value;
   const pinType = parseInt(selectedOption.split('_')[0]);
   
-  let latitude = data.get('latitude');
-  let longitude = data.get('longitude'); 
+  let latitude = document.getElementById('latitude').value;
+  let longitude = document.getElementById('longitude').value;
 
   if(latitude==null || latitude=='' || longitude==null || longitude=='') {
     document.getElementById('latitude').style.border = '2px solid red';;
@@ -185,6 +191,11 @@ function postPin(message) {
   };    
   fetch("https://sibiuinventoryapimanager.azure-api.net/v1/Pins", requestOptions)
   .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+  .then(result => { 
+    console.log(result);
+  })
+  .catch(error => {
+    console.log('error', error);
+  });
+  alert('Solicitatea a fost inregistrata.');
 }

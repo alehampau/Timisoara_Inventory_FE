@@ -25,24 +25,24 @@ var marker = L.marker([45.7489, 21.2087 -0.09]).addTo(mymap);
 
 var markers = []
 
-var requestOptions = {
+fetch("https://sibiuinventoryapimanager.azure-api.net/v1/Pins", {
   method: 'GET',
   redirect: 'follow'
-};
-
-fetch("https://sibiuinventoryapimanager.azure-api.net/v1/Pins", requestOptions)
-  .then(response => response.json())
-  .then(results=> {
-      for(let i = 0; i < results.data.length; i++) {
-        var newMarker = L.marker([results.data[i].gpsCoordX, results.data[i].gpsCoordY])
-        .bindPopup("<div> <b>Descriere: </b>"+results.data[i].description+"</div><hr>"+
-        "<a href='sesizari.html#editForm' class='btn btn-info btn-fill btn-wd''>Raporteaza o problema</a>")
-        .addTo(mymap);
-        newMarker.addEventListener('click',logPosition);
-        markers.push(results.data[i]);        
-      }
-  })
-  .catch(error => console.log('error', error));
+})
+.then(response => response.json())
+.then(results=> {
+    for(let i = 0; i < results.data.length; i++) {
+      var newMarker = L.marker([results.data[i].gpsCoordX, results.data[i].gpsCoordY])
+      .bindPopup("<div> <b>Descriere: </b>"+results.data[i].description+"</div><hr>"+
+      "<a href='sesizari.html#editForm' class='btn btn-info btn-fill btn-wd' style='margin-bottom: 2px;'>Adauga sesizare</a>" + 
+      "<br>"+
+      "<a href='sesizari.html#editForm' class='btn btn-info btn-fill btn-wd'>Vezi sesizari</a>")      
+      .addTo(mymap);
+      newMarker.addEventListener('click',logPosition);
+      markers.push(results.data[i]);        
+    }
+})
+.catch(error => console.log('error', error));
 
 function logPosition(e) {
   let coordinates = e.latlng;
@@ -90,4 +90,24 @@ function postIssue(message) {
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
+  alert('Solicitatea a fost inregistrata.');
 }
+
+function loadIssues() {
+  var issuesList = document.getElementById('issueList');
+  fetch("https://sibiuinventoryapimanager.azure-api.net/v1/Issues", {
+    method: 'GET',
+    redirect: 'follow'
+  })
+  .then(response => response.json())
+  .then(results=> {
+      for(let i = 0; i < results.data.length; i++) {
+        var record = document.createElement("LI");
+        record.innerHTML = '<b>Pin:</b> ' + results.data[i].pinId + "     <b>Description:</b> "+ results.data[i].details;
+        issuesList.appendChild(record);   
+      }
+  })
+  .catch(error => console.log('error', error));
+}
+
+loadIssues();
