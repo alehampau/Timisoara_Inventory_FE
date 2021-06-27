@@ -42,8 +42,7 @@ function signIn(googleUser) {
     loginVisibility(true); 
 }
 
-function init(){
-    startApp();
+startApp();
     var userName = localStorage.getItem('userName');
     if(userName != null){
         setUserNameLabel(userName);
@@ -51,7 +50,6 @@ function init(){
     } else {
         loginVisibility(false);
     }
-}
 
 function loginVisibility(isLoggedIn) {
     if (isLoggedIn) {
@@ -63,4 +61,27 @@ function loginVisibility(isLoggedIn) {
         document.getElementById('logoutBtn').style.display = 'none';
         document.getElementById('loginBtn').style.display = 'block';
     }
+}
+
+
+function realtimeClock(){
+  var rtClock = new Date();
+
+  var hours = rtClock.getHours();
+  var minutes = rtClock.getMinutes();
+  var seconds = rtClock.getSeconds();
+
+
+  var amPm = (hours < 12) ? "AM" : "PM";
+
+  hours = (hours > 12) ? hours - 12 : hours;
+
+  hours = ("0" + hours).slice(-2);
+  minutes = ("0" + minutes).slice(-2);
+  seconds = ("0" + seconds).slice(-2);
+
+
+  document.getElementById('clock').innerHTML = 
+      hours + " : " + minutes + " : " + seconds + " " + amPm;
+  var t = setTimeout(realtimeClock, 500);
 }

@@ -36,7 +36,7 @@
     <link href="auth.css" rel="stylesheet" />
  </head>
  
- <body onload="init()">
+ <body onload="realtimeClock()">
      <div class="wrapper">
         <div class="sidebar" data-image="../assets/img/home.jpg">
              <!--
@@ -126,11 +126,32 @@
                      <div class="row">
                          <div class="col-md-12">
                              <div class="card">
-                                 <div class="card-header">
-                                     <h4 class="card-title">Heading Example</h4>
+                                    <div class="card-header">
+                                        <h2 class="card-title">Ora locală este:</h2>
+                                        <div id="clock"></div>
+                                        <img class="img-clock-background" src="/images/clock.jpg">
+                                    </div>
+                             </div>
+                         </div>
+                         <div class="column">
+                             <div class="box">
+                                 <div class="box-image">
+                                     <img src="/images/Timisoara.jpeg" alt="">
                                  </div>
-                                 <div class="card-body">
-                                     
+                                 <div class="box-content">
+                                    <h3>Timișoara</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptas numquam quas corrupti modi earum. Placeat qui ipsa quod autem totam distinctio, optio aliquid temporibus necessitatibus iure nostrum harum dolore!</p>
+                                    <a href="#">Read More</a>
+                                 </div>
+                             </div>
+                             <div class="box">
+                                 <div class="box-image">
+                                     <img src="/images/Iasi.jpg" alt="">
+                                 </div>
+                                 <div class="box-content">
+                                    <h3>Iași</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptas numquam quas corrupti modi earum. Placeat qui ipsa quod autem totam distinctio, optio aliquid temporibus necessitatibus iure nostrum harum dolore!</p>
+                                    <a href="#">Read More</a>
                                  </div>
                              </div>
                          </div>

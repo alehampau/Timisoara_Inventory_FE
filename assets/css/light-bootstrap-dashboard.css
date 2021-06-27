@@ -2841,7 +2841,33 @@ Copyright (c) 2015 Daniel Eden
 .card .card-header {
     padding: 15px 15px 0;
     background-color: #FFFFFF;
-    border-bottom: none !important;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.card .img-clock-background{
+    /* background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)); */
+    width: 100%;
+    height: auto;
+}
+.card .card-title{
+    width: 100%;
+    margin-top: 15%;
+    position: absolute;
+    font-size: 5vw;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    letter-spacing: 5px;
+}
+#clock{
+    width: 100%;
+    position: absolute;
+    font-size: 5vw;
+    color: white;
+    text-align: center;
+    margin-top: 5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .card .card-category,
@@ -5340,3 +5366,19 @@ License - nucleoapp.com/license/
 }
 
 /* all icon font classes list here */
+
+.column{
+    display: block;
+    justify-content: space-between;
+}
+
+.box{
+    float:left;
+    width: 50%;
+    padding: 50px;
+    text-align: center;
+}
+.box-image img{
+    width: 500px;
+    height: 330px;
+}
