@@ -9,16 +9,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   zoomOffset: -1
 }).addTo(mymap);
 
-
-var popup = new L.marker();
-
-function onMapClick(e) {
-    marker
-        .bindPopup("Ai selectat ").openPopup()
-        .setLatLng(e.latlng)
-        .openOn(mymap);
-}
-
 var requestOptions = {
     method: 'GET',
     redirect: 'follow'
@@ -29,7 +19,9 @@ var requestOptions = {
     .then(results=> {
         for(let i = 0; i < results.data.length; i++) {
             if (isDesiredPinType(results.data[i].pinTypeId)){
-                L.marker([results.data[i].gpsCoordX, results.data[i].gpsCoordY]).addTo(mymap);
+                L.marker([results.data[i].gpsCoordX, results.data[i].gpsCoordY])
+                .bindPopup("<div> <b>Descriere</b><hr>"+results.data[i].description+"</div>")
+                .addTo(mymap);
             }
         }
     })
