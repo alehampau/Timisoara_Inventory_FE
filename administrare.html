@@ -34,6 +34,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
     <script src="https://apis.google.com/js/api:client.js"></script>    
     <link href="auth.css" rel="stylesheet" />
+    <link href="admin_page.css" rel="stylesheet" />
     <!--Map-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -138,19 +139,28 @@
                                     <div id="mapid" style="height: 500px"></div>    
                                  </div>
 
-                                 <div id="editForm">
-                                    <form id="pinCreateForm">
-                                        <select id="categoryMaster">
-                                            
-                                        </select>
-                                        <input type="text" readonly id="latitude" name="latitude"/>
-                                        <input type="text" readonly id="longitude" name="longitude"/>
-                                        <textarea name="message" id="pinDescription"></textarea>
-                                        <small>Nota : se recomanda ca descrierea sa contina cat mai multe informatii</small>
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                    <button onClick="removePin();">Delete</button>                                    
-                                    <button onClick="updatePin();">Update</button>                                    
+                                 <div id="editForm" class="card-body">
+                                    <form id="pinCreateForm" >
+                                        <div class="form-group">
+                                            <label class="formLabel">Pin type</label>
+                                            <select id="categoryMaster" class="form-control"></select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="formLabel">Latitude</label>
+                                            <input type="text" readonly id="latitude" name="latitude" class="form-control"/>
+                                        </div>
+                                        <div class="form-group">                                            
+                                            <label class="formLabel">Longitude</label>
+                                            <input type="text" readonly id="longitude" name="longitude" class="form-control"/>
+                                        </div>
+                                        <div class="form-group">    
+                                            <label class="formLabel">Description</label>   
+                                            <textarea name="message" id="pinDescription" class="form-control"></textarea>
+                                        </div>
+                                        <button class='btn btn-info btn-fill btn-wd' type="submit">Add new pin</button>
+                                        <button class='btn btn-info btn-fill btn-wd' onClick="removePin();">Remove pin</button>                                    
+                                        <button class='btn btn-info btn-fill btn-wd' onClick="updatePin();">Update pin</button> 
+                                    </form>                                   
                                 </div>
                              </div>
                          </div>
