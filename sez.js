@@ -36,7 +36,7 @@ fetch("https://sibiuinventoryapimanager.azure-api.net/v1/Pins", requestOptions)
       for(let i = 0; i < results.data.length; i++) {
         var newMarker = L.marker([results.data[i].gpsCoordX, results.data[i].gpsCoordY])
         .bindPopup("<div> <b>Descriere: </b>"+results.data[i].description+"</div><hr>"+
-        "<a href='administrare.html#editForm' class='btn btn-info btn-fill btn-wd''>Raporteaza o problema</a>")
+        "<a href='sesizari.html#editForm' class='btn btn-info btn-fill btn-wd''>Raporteaza o problema</a>")
         .addTo(mymap);
         newMarker.addEventListener('click',logPosition);
         markers.push(results.data[i]);        
@@ -46,17 +46,48 @@ fetch("https://sibiuinventoryapimanager.azure-api.net/v1/Pins", requestOptions)
 
 function logPosition(e) {
   let coordinates = e.latlng;
-  var latElement = document.getElementById('latitude');
-  latElement.value = coordinates.lat;
-  latElement.style.border = '1px solid black';      
-  var lngElement = document.getElementById('longitude');
-  lngElement.value = coordinates.lng;        
-  lngElement.style.border = '1px solid black';   
 
   for(let i = 0; i < markers.length; i++) {
-    if (markers[i].gpsCoordX == latElement.value && markers[i].gpsCoordY == lngElement.value) {
-      document.getElementById('pinDescription').value = markers[i].description;
+    if (markers[i].gpsCoordX == coordinates.lat && markers[i].gpsCoordY == coordinates.lng) {
+      document.getElementById('pinID').value = markers[i].id;
       break;
     }
   }  
 }  
+
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const data = new FormData(event.target);
+  
+  const pinId = data.get('pinID');
+  const description = data.get('message');
+  
+  var message = JSON.stringify({
+    "id": 0,
+    "details": description,
+    "photo": '',
+    "pinId": pinId,
+  });
+  postIssue(message);
+  location.reload();
+}
+
+const form = document.getElementById('pinCreateForm');
+form.addEventListener('submit', handleSubmit);
+
+function postIssue(message) {
+  var requestOptions = {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json", 
+      "Access-Control-Allow-Origin": '*'},
+    mode: 'cors',
+    body: message,
+    redirect: 'follow'
+  };    
+  fetch("https://sibiuinventoryapimanager.azure-api.net/v1/Issues", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+}
