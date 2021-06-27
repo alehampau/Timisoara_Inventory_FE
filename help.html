@@ -16,35 +16,30 @@
  <html lang="en">
  
  <head>
-     <meta charset="utf-8" />
-     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-     <link rel="icon" type="image/png" href="../assets/img/logo2.PNG">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-     <title>City Inventory</title>
-     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-     <!--     Fonts and icons     -->
-     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-     <!-- CSS Files -->
-     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-     <link href="../assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
-     <!-- CSS Just for demo purpose, don't include it in your project -->
-     <link href="../assets/css/demo.css" rel="stylesheet" />
-     <!-- Google authentification -->
-     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-     <script src="https://apis.google.com/js/api:client.js"></script>    
-     <link href="auth.css" rel="stylesheet" />  
-     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-          integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-          crossorigin=""></script>   
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/logo2.PNG">    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>City Inventory</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../assets/css/demo.css" rel="stylesheet" />
+    <!-- Google authentification -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <script src="https://apis.google.com/js/api:client.js"></script>    
+    <link href="auth.css" rel="stylesheet" />
+    <link href="style_help.css" rel="stylesheet">
  </head>
  
- <body>
+ <body onload="realtimeClock()">
      <div class="wrapper">
-         <div class="sidebar" data-image="../assets/img/home.jpg">
+        <div class="sidebar" data-image="../assets/img/home.jpg">
              <!--
          Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
  
@@ -52,20 +47,20 @@
      -->
              <div class="sidebar-wrapper">
                  <div class="logo">
-                         HARTA INTERACTIVĂ
+                    HARTA INTERACTIVĂ
                  </div>
                  <ul class="nav">
-                     <li>
+                     <li class="nav-item active">
                          <a class="nav-link" href="index.html">
                              <i class="nc-icon nc-chart-pie-35"></i>
                              <p>Acasa</p>
                          </a>
                      </li>
-                     <li class="nav-item active">
-                        <a class="nav-link" href="patrimoniu.html">
-                            <i class="nc-icon nc-notes"></i>
-                            <p>Patrimoniu</p>
-                        </a>
+                     <li>
+                         <a class="nav-link" href="patrimoniu.html">
+                             <i class="nc-icon nc-notes"></i>
+                             <p>Patrimoniu</p>
+                         </a>
                      </li>
                      <li>
                          <a class="nav-link" href="sesizari.html">
@@ -92,16 +87,16 @@
              <!-- Navbar -->
              <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                  <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="/images/logo.PNG" alt="" width="30%" height="30%">
-                    </a>
+                     <a class="navbar-brand" href="#">
+                         <img src="/images/logo.PNG" alt="" width="30%" height="30%">
+                     </a>
                      <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                          <span class="navbar-toggler-bar burger-lines"></span>
                          <span class="navbar-toggler-bar burger-lines"></span>
                          <span class="navbar-toggler-bar burger-lines"></span>
                      </button>
                      <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                         <ul class="navbar-nav ml-auto">                          
+                         <ul class="navbar-nav ml-auto">                           
                              <li class="nav-item">
                                 <a class="nav-link" href="#">
                                     <div id="loginBtn" class="customGPlusSignIn">
@@ -116,7 +111,7 @@
                             </li>                             
                              <li class="nav-item">
                                  <a class="nav-link" href="#">
-                                    <span id="logoutBtn" class="no-icon" onclick="signOut();">Deconectare</span>
+                                     <span id="logoutBtn" class="no-icon" onclick="signOut();">Deconectare</span>
                                  </a>
                              </li>
                          </ul>
@@ -129,9 +124,29 @@
                      <div class="row">
                          <div class="col-md-12">
                              <div class="card">
-                                 <div class="card-body">
-                                    <div id="mapid" style="height: 500px"></div>
-                                 </div>
+                                    <div class="card-header">
+                                        <h2 class="card-title">Ora locală este:</h2>
+                                        <div id="clock"></div>
+                                        <img class="img-clock-background" src="/images/clock.jpg">
+                                    </div>
+                             </div>
+                         </div>
+                         <div class="column">
+                            <div class="card">
+                                <div class="instructions">
+                                    <h3>
+                                       <i class="nc-icon nc-zoom-split">  Cum se face o sesizare?</i>
+                                    </h3>
+                                    <ul class="blockquote blockquote-primary">
+                                       <li>Logheaza-te folosind butonul “Autentificare cu Google";</li>
+                                       <li>Acceseaza ramura “Sesizari”;</li>
+                                       <li>Selecteaza marcajul pentru care doresti sa faci sesizarea. In fereastra marcajului selecteaza “Salveaza marcaj nou”;</li>
+                                       <li>In tabelul din josul paginii completeaza campurile cu informatii(acestea trebuie sa fie cat mai complete);</li>
+                                       <li>Apasa butonul "Trimite";</li>
+                                       <li>Sesizarea ta a fost trimisa!</li>
+                                       <li><a href="sesizari.html">Spre sesizari</a></li>
+                                    </ul>
+                                    </div>
                              </div>
                          </div>
                      </div>
@@ -140,13 +155,13 @@
              <footer class="footer">
                  <div class="container-fluid">
                      <nav>
-                        <p class="copyright text-center">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script> | 
-                            <a href="https://scoalainformala.ro/events/challenge-accepted-paperhack-25-27-iunie-2021-editia-vii/">Challenge Accepted</a> de a pune .ro la birocrație
-                        </p>
+                         <p class="copyright text-center">
+                             ©
+                             <script>
+                                 document.write(new Date().getFullYear())
+                             </script> | 
+                             <a href="https://scoalainformala.ro/events/challenge-accepted-paperhack-25-27-iunie-2021-editia-vii/">Challenge Accepted</a> de a pune .ro la birocrație
+                         </p>
                      </nav>
                  </div>
              </footer>
@@ -165,10 +180,11 @@
  <script src="../assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
  <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
  <script src="../assets/js/demo.js"></script>
- <!-- Google login -->
+<!-- Google login -->
 <script src="https://apis.google.com/js/platform.js" async defer></script> 
-<!-- Custom code -->
+ <!-- Custom code -->
 <script src="auth.js"></script>
-<script src="patrimoniu.js"></script>
 
+ 
  </html>
+ 
