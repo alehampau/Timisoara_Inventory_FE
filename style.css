@@ -17,3 +17,11 @@ flex: 1;
 #sesizare form select {
     display: block;
 }
+
+.formLabel {
+    padding-right: 2em;
+}
+
+#pinDescription {
+    height: 5em;
+}

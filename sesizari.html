@@ -125,9 +125,9 @@
                      <div class="row">
                          <div class="col-md-12">
                              <div class="card">
-                                 <div class="card-body">
-                                    <div id="actions">
-                                    <div id="filtre">       
+                                <div class="card-body">
+                                    <!-- <div id="actions">
+                                        <div id="filtre">       
                                             <label><input type="checkbox" name="" id=""> Constructii/lucrari neautorizate</label>
                                             <label><input type="checkbox" name="" id=""> Iluminat public</label>
                                             <label><input type="checkbox" name="" id=""> Zone de parcare</label>
@@ -135,14 +135,23 @@
                                             <label><input type="checkbox" name="" id="">Strazi/Alei/Trotuare</label>
                                             <label><input type="checkbox" name="" id="">Retele de apa/Canalizare</label>
                                             <label><input type="checkbox" name="" id="">Altele</label>
+                                        </div>
+                                    </div> -->
+                                    <div id="mapid" style="height: 800px" style="display: block;"></div> 
                                  </div>
-                                 <div id="sesizare">
-                                 </div>
-                                </div>
-                         
-                                 <div id="mapid" style="height: 800px" style="display: block;"></div>
-                                     
-                                 </div>
+                                 <div id="editForm" class="card-body">
+                                    <form id="pinCreateForm" >
+                                        <div class="form-group">
+                                            <label class="formLabel">Id Pin</label>
+                                            <input type="text" readonly id="pinID" name="pinID" class="form-control"/>
+                                        </div>
+                                        <div class="form-group">    
+                                            <label class="formLabel">Description</label>   
+                                            <textarea name="message" id="pinDescription" class="form-control"></textarea>
+                                        </div>
+                                        <button class='btn btn-info btn-fill btn-wd' type="submit">Report new issue</button>
+                                    </form>                                   
+                                </div>                                 
                              </div>
                          </div>
                      </div>
