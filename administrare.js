@@ -25,9 +25,9 @@ fetch("https://sibiuinventoryapimanager.azure-api.net/v1/Pins", requestOptions)
   .then(results=> {
     for(let i = 0; i < results.data.length; i++) {
       var newMarker = L.marker([results.data[i].gpsCoordX, results.data[i].gpsCoordY])
-      .bindPopup("<div> <b>Description: </b>"+results.data[i].description+"</div><hr>"+
-      "<a href='administrare.html#editForm' class='btn btn-info btn-fill btn-wd' style='margin-bottom: 2px;'>Remove pin</a>"+
-      "<a href='administrare.html#editForm' class='btn btn-info btn-fill btn-wd'>Update description</a>")
+      .bindPopup("<div> <b>Descriere: </b>"+results.data[i].description+"</div><hr>"+
+      "<a href='administrare.html#editForm' class='btn btn-info btn-fill btn-wd' style='margin-bottom: 2px;'>Sterge pin</a>"+
+      "<a href='administrare.html#editForm' class='btn btn-info btn-fill btn-wd'>Modifica descriere</a>")
       .addTo(mymap);
       newMarker.addEventListener('click',logPosition);
       markers.push(results.data[i]);

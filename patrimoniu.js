@@ -20,7 +20,7 @@ var requestOptions = {
         for(let i = 0; i < results.data.length; i++) {
             if (isDesiredPinType(results.data[i].pinTypeId)){
                 L.marker([results.data[i].gpsCoordX, results.data[i].gpsCoordY])
-                .bindPopup("<div> <b>Description</b><hr>"+results.data[i].description+"</div>")
+                .bindPopup("<div> <b>Descriere</b><hr>"+results.data[i].description+"</div>")
                 .addTo(mymap);
             }
         }
