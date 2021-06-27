@@ -2849,6 +2849,7 @@ Copyright (c) 2015 Daniel Eden
     /* background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)); */
     width: 100%;
     height: auto;
+    padding-bottom: 15px;
 }
 .card .card-title{
     width: 100%;
@@ -2869,7 +2870,13 @@ Copyright (c) 2015 Daniel Eden
     margin-top: 5%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.complains{
+    margin: 0 44%;
+}
 
+.instructions li{
+    list-style:decimal;
+}
 .card .card-category,
 .card label {
     font-size: 14px;
