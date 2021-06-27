@@ -4641,6 +4641,14 @@ Copyright (c) 2015 Daniel Eden
         -ms-overflow-style: -ms-autohiding-scrollbar;
         -webkit-overflow-scrolling: touch;
     }
+    .card-body img{
+        height: 300px;
+    }
+}
+@media (max-width: 525px){
+    .card-body img{
+        height: 200px;
+    }
 }
 
 .bootstrap-switch {
