@@ -26,7 +26,7 @@ fetch("https://sibiuinventoryapimanager.azure-api.net/v1/Pins", requestOptions)
     for(let i = 0; i < results.data.length; i++) {
       var newMarker = L.marker([results.data[i].gpsCoordX, results.data[i].gpsCoordY])
       .bindPopup("<div> <b>Descriere: </b>"+results.data[i].description+"</div><hr>"+
-      "<a href='administrare.html#editForm' class='btn btn-info btn-fill btn-wd' style='margin-bottom: 2px;'>Sterge pin</a>"+
+      "<a href='administrare.html#editForm' class='btn btn-info btn-fill btn-wd' style='margin-bottom: 2px;'>Sterge Marcaj</a>"+
       "<a href='administrare.html#editForm' class='btn btn-info btn-fill btn-wd'>Modifica descriere</a>")
       .addTo(mymap);
       newMarker.addEventListener('click',logPosition);
@@ -117,7 +117,7 @@ function onMapClick(e) {
 
     L.popup()
     .setLatLng(coordinates)
-    .setContent("<a href='administrare.html#editForm' id='saveBtn' class='btn btn-info btn-fill btn-wd'>Salveaza marker</a>")
+    .setContent("<a href='administrare.html#editForm' id='saveBtn' class='btn btn-info btn-fill btn-wd'>Salveaza Marcaj Nou</a>")
     .openOn(mymap);
 }
 
