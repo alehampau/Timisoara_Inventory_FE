@@ -33,7 +33,10 @@ fetch("https://sibiuinventoryapimanager.azure-api.net/v1/Pins", requestOptions)
   .then(response => response.json())
   .then(results=> {
       for(let i = 0; i < results.data.length; i++) {
-        L.marker([results.data[i].gpsCoordX, results.data[i].gpsCoordY]).addTo(mymap);
+        L.marker([results.data[i].gpsCoordX, results.data[i].gpsCoordY])
+        .bindPopup("<div> <b>Description: </b>"+results.data[i].description+"</div><hr>"+
+        "<a href='administrare.html#editForm' class='btn btn-info btn-fill btn-wd''>Report an issue</a>")
+        .addTo(mymap);
       }
   })
   .catch(error => console.log('error', error));
