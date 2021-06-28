@@ -103,7 +103,7 @@ function loadIssues() {
   .then(results=> {
       for(let i = 0; i < results.data.length; i++) {
         var record = document.createElement("LI");
-        record.innerHTML = '<b>Pin:</b> ' + results.data[i].pinId + "     <b>Description:</b> "+ results.data[i].details;
+        record.innerHTML = '<b>Marcaj:</b> ' + results.data[i].pinId + "     <b>Descriere:</b> "+ results.data[i].details;
         issuesList.appendChild(record);   
       }
   })
